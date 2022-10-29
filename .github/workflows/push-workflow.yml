@@ -13,10 +13,10 @@ jobs:
       - name: Installing packages
         run: npm ci
       - name: Running JS Test
-        run: npm test
+        run: npm run test
       - name: Running Linting Test
         run: npm run lint
       - name: Building project
         run: npm run build
       - name: Deploying Project
-        run: echo "Deploying"
+        run: echo "Deploying .."
