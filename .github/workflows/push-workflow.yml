@@ -1,0 +1,22 @@
+name: push-workflow
+on: push
+jobs:
+  project:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Cloning Repository
+        uses: actions/checkout@v3
+      - name: Installing NodeJs 18
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Installing packages
+        run: npm ci
+      - name: Running JS Test
+        run: npm test
+      - name: Running Linting Test
+        run: npm lint
+      - name: Building project
+        run: npm run build
+      - name: Deploying Project
+        run: echo "Deploying"
